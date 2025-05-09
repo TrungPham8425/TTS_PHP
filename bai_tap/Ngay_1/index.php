@@ -49,14 +49,13 @@ const COMMISSION_RATE = 0.2;
 const VAT_RATE = 0.1;
 
 // doi kieu du lieu
-
 foreach ($oderList as $key => $oder) {
     // hien thi thong tin chien dich
     echo '<h2>Chien dich:' . $oder['name'] . '</h2>';
     echo 'Trang thai: ' . ($oder['status'] ? "<span style='color: green;'>Dang dien ra</span>" : "<span style='color: red;'>Da ket thuc</span>");
 
     // ep kieu du lieu
-    $oderList['oder1']['price'] = (int)$oder['quantity'];
+    $oderList['oder1']['price'] = (float)$oder['price'];
 
     // tinh doanh thu
     $revenue = $oder['price'] * $oder['quantity'];

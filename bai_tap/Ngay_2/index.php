@@ -26,7 +26,7 @@ $commissionRates = [
 function referrers($userId,  $users,  $maxLevel = 3)
 {
     // Khai báo biến
-    $referrers = [];
+    $referrers = []; //người giới thiệu
     $current = $userId;
     for ($level = 1; $level <= $maxLevel; $level++) {
         $referrer_id = $users[$current]['referrer_id'] ?? null;
@@ -61,29 +61,23 @@ function calculateCommission($orders, $users, $commissionRates)
         $referrers = referrers($buyerId, $users);
 
         foreach ($referrers as $level => $referrerId) {
-            $rate = $commissionRates[$level] ?? 0; // Tỷ lệ hoa hồng nhận được theo cấp độ
-            $commission = $amount * $rate; //Số hoa hồng được nhận theo từng đơn hàng
+            $rate = $commissionRates[$level] ?? 0;
+            $commission = $amount * $rate;
 
-            //Tính tổng số tiền hoa hồng nhận được
-
-            // Kiểm tra tiền hoa hồng của từng người có hay không
             if (!isset($totals[$referrerId])) {
                 $totals[$referrerId] = 0;
             }
-
-            // Tổng số hoa hồng nhận được của mỗi người
             $totals[$referrerId] += $commission;
+
+            // Đặt trong vòng lặp để ghi từng cấp
+            $commissionDetail[] = [
+                'referrer_id'  => $referrerId,
+                'order_id'  => $orderId,
+                'buyer_id'  => $buyerId,
+                'commission'  => $commission,
+                'level' => $level
+            ];
         }
-
-        // Lấy chi tiết hoa hồng nhận được
-        $commissionDetail[] = [
-            'referrer_id'  => $referrerId,
-            'order_id'  => $orderId,
-            'buyer_id'  => $buyerId,
-            'commission'  => $commission,
-            'level' => $level
-
-        ];
     }
     return [$totals, $commissionDetail];
 }
