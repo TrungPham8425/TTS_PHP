@@ -1,0 +1,9 @@
+[2025-05-09 03:54:06] IP: ::1 - Action: Xem lịch sử hoạt động. - Type: login
+[2025-05-09 10:54:28] IP: ::1 - Action: Đăng xuất - Type: logout
+[2025-05-09 10:54:39] IP: ::1 - Action: Đăng nhập thất bại. - Type: login
+[2025-05-09 10:54:44] IP: ::1 - Action: Đăng nhập thành công. - Type: login
+[2025-05-09 10:54:51] IP: ::1 - Action: Uploaded file: upload_1746762891.png - Type: upload
+[2025-05-09 03:54:55] IP: ::1 - Action: Xem lịch sử hoạt động. - Type: login
+[2025-05-09 03:55:02] IP: ::1 - Action: Xem lịch sử hoạt động. - Type: login
+[2025-05-09 03:55:54] IP: ::1 - Action: Xem lịch sử hoạt động. - Type: login
+[2025-05-09 03:56:23] IP: ::1 - Action: Xem lịch sử hoạt động. - Type: login
