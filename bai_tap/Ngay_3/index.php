@@ -95,8 +95,8 @@ $works = $workingDays;
 // Sắp xếp theo thứ tự giản dần ngày công
 sort($works);
 // Lấy nhân viên có ngày công nhiều nhất
-$min = $works[0];
-$max = end($works);
+$max = $works[0];
+$min = end($works);
 $minEmpIds = array_keys($workingDays, $min);
 $maxEmpIds = array_keys($workingDays, $max);
 

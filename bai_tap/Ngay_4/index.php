@@ -212,7 +212,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                 <p><strong>Tổng thu:</strong> <?php echo number_format($_SESSION['tong_thu'], 2); ?> VND</p>
                 <p><strong>Tổng chi:</strong> <?php echo number_format($_SESSION['tong_chi'], 2); ?> VND</p>
                 <p><strong>Số dư:</strong> <?php echo number_format($_SESSION['tong_thu'] - $_SESSION['tong_chi'], 2); ?> VND</p>
-                <p><strong>Tỷ giá (VND/USD):</strong> <?php echo number_format($GLOBALS['ty_gia'], 2); ?></p>
             </div>
 
             <!-- Nút xóa toàn bộ giao dịch -->

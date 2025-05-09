@@ -42,8 +42,8 @@ function referrers($userId,  $users,  $maxLevel = 3)
 // Hàm tổng hợp
 function calculateCommission($orders, $users, $commissionRates)
 {
-    $totals = []; //tổng hoa hồng mỗi người nhận được
-    $commissionDetail = []; //chi tiết hoa hồng nhận đượcđược
+    $totals = []; //tổng  hoa hồng mỗingười nhận được
+    $commissionDetail = []; //chi tiết hoa hồng nhận được
 
     // tính hoa hồng
     foreach ($orders as $order) {
