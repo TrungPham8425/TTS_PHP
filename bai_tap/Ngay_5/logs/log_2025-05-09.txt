@@ -7,3 +7,6 @@
 [2025-05-09 03:55:02] IP: ::1 - Action: Xem lịch sử hoạt động. - Type: login
 [2025-05-09 03:55:54] IP: ::1 - Action: Xem lịch sử hoạt động. - Type: login
 [2025-05-09 03:56:23] IP: ::1 - Action: Xem lịch sử hoạt động. - Type: login
+[2025-05-09 16:43:34] IP: ::1 - Action: Đăng nhập thành công. - Type: login
+[2025-05-09 09:43:37] IP: ::1 - Action: Xem lịch sử hoạt động. - Type: login
+[2025-05-09 09:43:41] IP: ::1 - Action: Xem lịch sử hoạt động. - Type: login
