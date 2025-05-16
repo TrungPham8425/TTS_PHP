@@ -114,7 +114,7 @@
     </div>
 
     <script>
-        // Sự kiện khi trang được tải: gọi hàm lấy sản phẩm và thương hiệu
+        // gọi hàm lấy sản phẩm và thương hiệu
         window.onload = () => {
             fetchProducts();
             loadBrands();

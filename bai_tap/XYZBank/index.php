@@ -34,15 +34,29 @@ try {
 }
 
 // Hiển thị thông tin tài khoản
+echo '<table border="1" cellpadding="8" cellspacing="0">';
+echo '<thead>';
+echo '<tr>';
+echo '<th>Tài khoản</th>';
+echo '<th>Chủ sở hữu</th>';
+echo '<th>Loại</th>';
+echo '<th>Số dư (VNĐ)</th>';
+echo '</tr>';
+echo '</thead>';
+echo '<tbody>';
+
 foreach ($accounts as $account) {
-    echo sprintf(
-        "Tài khoản: %s | %s | Loại: %s | Số dư: %s VNĐ<br>",
-        $account->getAccountNumber(),
-        $account->getOwnerName(),
-        $account->getAccountType(),
-        number_format($account->getBalance(), 0, ',', '.') // Định dạng số dư
-    );
+    echo '<tr>';
+    echo '<td>' . htmlspecialchars($account->getAccountNumber()) . '</td>';
+    echo '<td>' . htmlspecialchars($account->getOwnerName()) . '</td>';
+    echo '<td>' . htmlspecialchars($account->getAccountType()) . '</td>';
+    echo '<td>' . number_format($account->getBalance(), 0, ',', '.') . '</td>';
+    echo '</tr>';
 }
+
+echo '</tbody>';
+echo '</table>';
+
 
 // Hiển thị lãi suất tài khoản tiết kiệm
 $nguyenThiA = $accounts->getIterator()->offsetGet(0); // Lấy tài khoản của Nguyễn Thị A

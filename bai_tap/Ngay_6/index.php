@@ -193,11 +193,13 @@ $storedEmail = isset($_COOKIE['user_email']) ? $_COOKIE['user_email'] : '';
         <?php endif; ?>
 
         <!-- Hiển thị xác nhận đơn hàng -->
-        <?php if (file_exists($JSON_FILE)): ?>
-            <?php
-            $order = json_decode(file_get_contents($JSON_FILE), true);
-            if ($order):
-            ?>
+        <?php
+        if (file_exists($JSON_FILE)) {
+            $jsonContent = file_get_contents($JSON_FILE);
+            $order = json_decode($jsonContent, true);
+
+            if (is_array($order) && isset($order['products']) && isset($order['total_amount'])):
+        ?>
                 <h2 class="mt-5">Xác nhận đơn hàng</h2>
                 <p><strong>Email:</strong> <?php echo htmlspecialchars($order['customer_email']); ?></p>
                 <p><strong>Số điện thoại:</strong> <?php echo htmlspecialchars($order['customer_phone']); ?></p>
@@ -228,8 +230,10 @@ $storedEmail = isset($_COOKIE['user_email']) ? $_COOKIE['user_email'] : '';
                         </tr>
                     </tbody>
                 </table>
-            <?php endif; ?>
-        <?php endif; ?>
+        <?php
+            endif;
+        }
+        ?>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

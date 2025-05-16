@@ -14,6 +14,6 @@ trait TransactionLogger
         $date = date('Y-m-d H:i:s');
         $formattedAmount = number_format($amount, 0, ',', '.') . ' VNĐ';
         $formattedBalance = number_format($newBalance, 0, ',', '.') . ' VNĐ';
-        echo "[$date] Giao dịch: $type $formattedAmount | Số dư mới: $formattedBalance\n";
+        echo "[$date] Giao dịch: $type $formattedAmount | Số dư mới: $formattedBalance <br>";
     }
 }
